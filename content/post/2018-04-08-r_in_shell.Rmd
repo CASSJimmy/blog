@@ -1,0 +1,43 @@
+---
+title: 如何在Shell中运行R语言脚本
+author: Jimmy fung
+date: '2018-04-08'
+slug: r_in_shell
+categories:
+  - R语言
+  - Shell
+tags:
+  - R语言
+  - Shell
+  - 脚本
+---
+# 在Shell中运行R语言脚本的两种方法
+- 第一种：
+```bash
+Rscript yourscript.R
+```
+- 第二种：
+```bash
+r CMD BATCH myscript.R
+```
+
+
+# 存在问题
+本人电脑系统为`macOS High Sierra`，
+我在R语言脚本中使用了`readline()`这一函数希望能够将R语言脚本制作成**交互式脚本**，
+但是在实际的运行过程中，脚本根本不给我输入的机会，可能是因为对于R语言的了解还不够深吧。
+
+# 问题解决
+事实上，可以让shell脚本给R语言传入参数。
+在shell中将交互式内容写好，然后传递给R语言脚本。
+需要使用到的代码块是：
+```r
+args <- commandArgs(T)
+```
+然后在shell中需要以如下方式传递参数：
+```bash
+Rscript myscript.R "arg1" "arg2"
+```
+代码块中的双引号其实挺重要的，当你的`arg1`是`there are some blanks`时，
+如果不加引号的话，事实上传递了四个参数给R语言脚本，分别是`there`,`are`,`some`,`blanks`，
+这个时候自然脚本的运行就会发生较大的偏误啦。
