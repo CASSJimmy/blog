@@ -1,7 +1,7 @@
 baseurl = "www.im401.com"
 languageCode = "en-us"
 title = "Dongfa Feng"
-theme = "hugo-ivy"
+theme = "ivy"
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
