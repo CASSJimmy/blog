@@ -5,6 +5,7 @@ if [ $# -ne 1 ]; then
     echo "请输入一串字符串作为参数！"
 else
     message=$1
+    cd ..
     git add .
     git commit -m "$message"
     git push
