@@ -1,3 +1,4 @@
+setwd("../")
 library(blogdown)
 
 args <- commandArgs(T)
@@ -6,6 +7,7 @@ args <- commandArgs(T)
 options(blogdown.author="Jimmy fung")
 
 ## 第一个参数是说是否在post文件夹下建立文件
+filetype=""
 if(args[1]=="no" ){
     filetype="post/"
 }

@@ -1,0 +1,32 @@
+---
+title: 使用Shell将汉字转为拼音
+author: Jimmy fung
+date: '2018-04-14'
+slug: convert_pinyin
+categories:
+  - Shell
+  - 脚本
+tags:
+  - shell
+  - ch2py
+draft: yes
+---
+
+# 问题提出
+很自然的，我们会在许多场合下需要将汉字转化为拼音。比如对文件的重命名，对数据的重编码，或者仅仅就是我开心，我乐意，我就是需要汉字转拼音。
+# 问题解决
+我参照这篇[博客](https://blog.csdn.net/hanchaohao2012/article/details/53678319)，发现可以使用`Shell`来完成这一工作。
+
+首先在我的mac上使用`brew install ruby`安装`ruby`，然后再安装一个名为`ch2py`的小工具就行，相应代码为`sudo gem install chinese_pinyin`。
+
+运行如下命令即可以输出相应的拼音
+```bash
+ch2py 中文
+```
+
+上面的命令给出的输出是`zhong wen`，注意到其中有一个空格。
+
+# 场景应用
+可以在我的[Gitee](https://gitee.com/jfung_org/scripts)里面找到两个非常简单的应用，[递归地修改文件名](https://gitee.com/jfung_org/scripts/blob/master/han_convert_pinyin/changeFileName.sh)以及[修改csv文件](https://gitee.com/jfung_org/scripts/blob/master/han_convert_pinyin/changeFileContent.sh)。
+
+在使用脚本前请仔细阅读项目自带的readme.md文档，虽然它写的也不够翔实。
