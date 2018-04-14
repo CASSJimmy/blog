@@ -9,7 +9,6 @@ categories:
 tags:
   - shell
   - ch2py
-draft: yes
 ---
 
 # 问题提出
